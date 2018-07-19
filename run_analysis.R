@@ -2,20 +2,20 @@ rm(list=ls())
 
 ### General Descriptors ###
 
-activity_labels=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/activity_labels.txt',sep=' ',stringsAsFactors = F,col.names = c('Activity_Label','Activity'))
-features=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/features.txt',sep=' ',stringsAsFactors = F,col.names = c('Measurement_Label','Measurement'))
+activity_labels=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/activity_labels.txt',sep=' ',stringsAsFactors = F,col.names = c('Activity_Label','Activity'))
+features=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/features.txt',sep=' ',stringsAsFactors = F,col.names = c('Measurement_Label','Measurement'))
 
 ### Reading in Training Set Data ###
 
-y_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/y_train.txt',col.names = c('Activity_Label'))
-X_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/X_train.txt')
-subject_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/subject_train.txt',col.names = c('Subject'))
+y_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/y_train.txt',col.names = c('Activity_Label'))
+X_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/X_train.txt')
+subject_train=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/train/subject_train.txt',col.names = c('Subject'))
 
 ### Reading in Test Set Data ###
 
-y_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/y_test.txt',col.names = c('Activity_Label'))
-X_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/X_test.txt')
-subject_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data\ Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/subject_test.txt',col.names = c('Subject'))
+y_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/y_test.txt',col.names = c('Activity_Label'))
+X_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/X_test.txt')
+subject_test=read.table('/Users/edmondlowjy/datasciencecoursera/Data-Cleaning/Week\ 4/UCI\ HAR\ Dataset/test/subject_test.txt',col.names = c('Subject'))
 
 ### Combining datasets and removing obsolete ones
 
@@ -52,6 +52,5 @@ rm(list=setdiff(ls(), c("tidy_data")))
 
 ### Output the Tidy Data
 
-write.csv(tidy_data,file=paste0(getwd(),'/tidy_data.csv'))
-
+write.table(tidy_data,file=paste0(getwd(),'/tidy_data.txt'),row.names = F)
 
