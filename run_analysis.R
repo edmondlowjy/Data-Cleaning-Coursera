@@ -48,8 +48,10 @@ tidy_data<- tbl_df(combined_data) %>%
 ### Manual verification if dplyr performed as expected
 
 tidy_data[1,-(1:2)]==colMeans(combined_data[(combined_data$Subject==1 & combined_data$Activity=='LAYING'),-(1:2)])
-
 rm(list=setdiff(ls(), c("tidy_data")))
 
+### Output the Tidy Data
+
+write.csv(tidy_data,file=paste0(getwd(),'/tidy_data.csv'))
 
 
