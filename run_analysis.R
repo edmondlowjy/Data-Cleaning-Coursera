@@ -1,3 +1,5 @@
+getwd()
+
 rm(list=ls())
 
 ### General Descriptors ###
@@ -53,4 +55,6 @@ rm(list=setdiff(ls(), c("tidy_data")))
 ### Output the Tidy Data
 
 write.table(tidy_data,file=paste0(getwd(),'/tidy_data.txt'),row.names = F)
+
+
 
