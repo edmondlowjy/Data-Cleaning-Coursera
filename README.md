@@ -13,4 +13,4 @@ In order to name the activity performed in each row observation of combined_data
 
 Finally, the tidy data is extracted using dplyr package - grouping and summarizing.
 
-To ensure that the functions are called correctly, I have also added a step of manual checking using Subject 1 and the 561 measurements made for 'Laying' activity.
+To ensure that the functions are called correctly, I have also added a step of manual checking using Subject 1 and the 66 measurements made for 'Laying' activity.
